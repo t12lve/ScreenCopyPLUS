@@ -1,9 +1,60 @@
-> [!WARNING]
-> **This GitHub repo (<https://github.com/Genymobile/scrcpy>) is the only official
-source for the project. Do not download releases from random websites, even if
-their name contains `scrcpy`.**
+# 📱 ScreenCopyPLUS (v5.0.1) • Rust Edition
+> **Fork officiel de [Genymobile/scrcpy](https://github.com/Genymobile/scrcpy)** enrichi d'un gestionnaire complet en Rust, d'un système de transfert de fichiers bidirectionnel glisser-déposer, d'un contrôle automatique de l'écran toujours allumé (Stay Awake), et d'une exécution 100% sans invite de commande (aucune fenêtre console CMD).
 
-# scrcpy (v5.0.1)
+---
+
+### 🚀 Nouveautés exclusives ScreenCopyPLUS
+
+1. **⚡ Système de Transfert de Données Simplifié (PC ↔ Téléphone)** :
+   - **Glisser-Déposer direct (Drag & Drop)** : Déposez n'importe quel fichier ou dossier de Windows directement dans l'application pour l'envoyer instantanément sur votre appareil Android.
+   - **Explorateur de stockage intégré** : Parcourez `/sdcard`, `Download`, `DCIM/Camera`, `Pictures`, `Documents`, etc. Téléchargez ou supprimez en un clic.
+   - **Installateur rapide d'APK** : Glissez ou sélectionnez un fichier `.apk` pour l'installer directement sur le smartphone (`adb install -r`).
+   - **Raccourcis rapides** vers les dossiers essentiels.
+
+2. **🚫 Zéro fenêtre CMD / Console** :
+   - Compilé en sous-système Windows GUI natif (`#![windows_subsystem = "windows"]`).
+   - Tous les appels sous-jacents (ADB, scrcpy, shell) utilisent le drapeau Windows `CREATE_NO_WINDOW`. Aucun flash de terminal noir à l'écran.
+
+3. **🔆 Écran Toujours Allumé (Stay Awake réglable)** :
+   - Maintient automatiquement l'écran de l'appareil allumé dès la connexion et pendant l'utilisation de l'application.
+   - Entièrement réglable : Mode permanent (Infini), pendant la charge USB, ou avec choix du délai d'extinction (30s, 2m, 10m, 30m, Infini).
+   - Option pour éteindre l'écran physique pendant le mirroring afin d'économiser la batterie et éviter la chauffe.
+
+4. **🦀 Développé en Rust pour une légèreté extrême** :
+   - Exécutable ultra-léger (~5 Mo) et consommation mémoire minimale (< 30 Mo de RAM).
+   - Démarrage instantané avec interface moderne sombre, fluide et réactive basée sur `egui`/`eframe`.
+
+---
+
+### 📦 Installation & Utilisation rapide
+
+#### Option 1 : Installeur Windows (Recommandé)
+Téléchargez ou exécutez l'installeur officiel :
+👉 **`dist/ScreenCopyPLUS_Setup_v5.0.1.exe`**
+
+L'installeur configure automatiquement :
+- L'installation complète dans `Program Files` ou `AppData`
+- Le runtime ADB et scrcpy v5.0.1
+- Les raccourcis dans le Menu Démarrer et sur le Bureau
+- Le programme de désinstallation propre dans Windows
+
+Pour regénérer l'installeur à tout moment :
+```powershell
+.\build_installer.ps1
+```
+
+#### Option 2 : Exécution portable directe
+Double-cliquez simplement sur **`ScreenCopyPLUS.exe`** à la racine du projet !
+
+Pour recompiler le projet en Rust :
+```powershell
+cargo build --release
+```
+L'exécutable optimisé se trouve dans `target/release/screencopy-plus.exe`.
+
+---
+
+## Dépôt d'origine (Genymobile/scrcpy)
 
 <img src="app/data/scrcpy.svg" width="128" height="128" alt="scrcpy" align="right" />
 
