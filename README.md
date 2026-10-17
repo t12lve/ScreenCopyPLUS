@@ -26,8 +26,24 @@
 
 ---
 
-### 📦 Utilisation rapide
+### 📦 Installation & Utilisation rapide
 
+#### Option 1 : Installeur Windows (Recommandé)
+Téléchargez ou exécutez l'installeur officiel :
+👉 **`dist/ScreenCopyPLUS_Setup_v5.0.1.exe`**
+
+L'installeur configure automatiquement :
+- L'installation complète dans `Program Files` ou `AppData`
+- Le runtime ADB et scrcpy v5.0.1
+- Les raccourcis dans le Menu Démarrer et sur le Bureau
+- Le programme de désinstallation propre dans Windows
+
+Pour regénérer l'installeur à tout moment :
+```powershell
+.\build_installer.ps1
+```
+
+#### Option 2 : Exécution portable directe
 Double-cliquez simplement sur **`ScreenCopyPLUS.exe`** à la racine du projet !
 
 Pour recompiler le projet en Rust :
